@@ -15,7 +15,7 @@ import messageRoutes from "./routes/messageRoutes";
 
 dotenv.config();
 
-const whiteList = ["http://localhost:3000"];
+const whiteList = ["http://localhost:3000", "https://website-login-register.onrender.com"];
 
 const corsOptions = {
   origin(origin, callback) {
