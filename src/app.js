@@ -15,10 +15,7 @@ import messageRoutes from "./routes/messageRoutes";
 
 dotenv.config();
 
-const whiteList = [
-  "http://localhost:7507",
-  "https://frontend-website.up.railway.app",
-];
+const whiteList = ["*"];
 
 const corsOptions = {
   origin(origin, callback) {
