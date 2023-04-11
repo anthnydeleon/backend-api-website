@@ -15,6 +15,21 @@ import messageRoutes from "./routes/messageRoutes";
 
 dotenv.config();
 
+const whiteList = [
+  "http://localhost:7507",
+  "https://frontend-website.up.railway.app",
+];
+
+const corsOptions = {
+  origin(origin, callback) {
+    if (whiteList.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+};
+
 class App {
   constructor() {
     this.app = express();
@@ -23,7 +38,7 @@ class App {
   }
 
   middlewares() {
-    this.app.use(cors());
+    this.app.use(cors(corsOptions));
     this.app.use(helmet());
     this.app.use(delay(1000));
     this.app.use(express.urlencoded({ extended: true }));
