@@ -17,7 +17,7 @@ dotenv.config();
 
 const whiteList = [
   "http://localhost:7507",
-  "https://frontend-website.up.railway.app/",
+  "https://frontend-website.up.railway.app",
 ];
 
 const corsOptions = {
