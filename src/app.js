@@ -15,7 +15,7 @@ import messageRoutes from "./routes/messageRoutes";
 
 dotenv.config();
 
-const whiteList = ["http://localhost:3000", "http://35.198.29.149"];
+const whiteList = ["http://localhost:3000"];
 
 const corsOptions = {
   origin(origin, callback) {
